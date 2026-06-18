@@ -9,6 +9,18 @@ import gallery5 from "../imports/64129c43-bdf3-4e70-8728-8217d7cbd384-1.jfif";
 import gallery6 from "../imports/bd306616-3866-486f-8cdd-5c0cf846b321-1.jfif";
 import gallery7 from "../imports/fd84e2fe-e899-40cf-ac59-07d5a446fc5a-1.jfif";
 
+// Local asset replacements requested by the user
+import newlyProvided from "../../assets/newly-provided-mango.jpg";
+import mosmiImg from "../../assets/mosmi-chaunsa.jpeg";
+import whiteChaunsaImg from "../../assets/white-chaunsa.jpg";
+import anwarRatolImg from "../../assets/anwar-ratol.jpeg";
+import saroliImg from "../../assets/saroli-mango.jpeg";
+import dusehriImg from "../../assets/dusehri-mango.jpg";
+import langraImg from "../../assets/langra-mango.jpg";
+import nawabpuriImg from "../../assets/nawabpuri-mango.jpg";
+import sindhriImg from "../../assets/sindhri-mango.jpg";
+import desiImg from "../../assets/desi-mango.jpg";
+
 const WA_URL = "https://wa.me/923376113633";
 const WA_PRIMARY = "+92 337 6113633";
 const WA_SECONDARY = "+92 314 4225277";
@@ -43,69 +55,15 @@ const skeuBtnYellow = {
 };
 
 const mangoVarieties = [
-  {
-    name: "Mosmi Chaunsa",
-    desc: "The king of Pakistani mangoes with unmatched sweetness and a rich golden hue.",
-    origin: "Multan, Punjab",
-    season: "July to August",
-    img: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "White Chaunsa",
-    desc: "Exceptionally sweet with a pale golden skin and fiber free pulp.",
-    origin: "Rahim Yar Khan",
-    season: "August",
-    img: "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Anwar Ratol",
-    desc: "Small yet intensely aromatic with an extraordinary natural sugar content.",
-    origin: "Bahawalpur, Punjab",
-    season: "July",
-    img: "https://images.unsplash.com/photo-1595980940938-7f74a3ce4fdc?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Saroli",
-    desc: "A rare early season variety known for its perfectly balanced sweet and tangy profile.",
-    origin: "Sindh",
-    season: "June to July",
-    img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Dusehri",
-    desc: "Slender, oblong shape with a refreshingly sweet and delicate flavor.",
-    origin: "Historical Lucknow origins",
-    season: "July",
-    img: "https://images.unsplash.com/photo-1582979512210-4cf1be53c5f3?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Langra",
-    desc: "Green skinned even when ripe, with a uniquely complex sweet and tart flavor.",
-    origin: "Multan, Punjab",
-    season: "July to August",
-    img: "https://images.unsplash.com/photo-1591073067432-e4d8fc1b60ca?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Nawabpuri",
-    desc: "A traditional cultivar prized for its aromatic richness and smooth velvety texture.",
-    origin: "Bahawalpur",
-    season: "July",
-    img: "https://images.unsplash.com/photo-1544025162-d76538b2a5f0?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Sindhri",
-    desc: "The pride of Sindh, celebrated for its large size and exceptionally sweet taste.",
-    origin: "Mirpurkhas, Sindh",
-    season: "June to July",
-    img: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=640&q=82",
-  },
-  {
-    name: "Desi Mango",
-    desc: "The authentic village mango with an intensely concentrated and nostalgic flavor.",
-    origin: "Punjab",
-    season: "June to August",
-    img: "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=640&q=82&crop=right",
-  },
+  { name: "Mosmi Chaunsa", desc: "The king of Pakistani mangoes with unmatched sweetness and a rich golden hue.", img: mosmiImg },
+  { name: "White Chaunsa", desc: "Exceptionally sweet with a pale golden skin and fiber free pulp.", img: whiteChaunsaImg },
+  { name: "Anwar Ratol", desc: "Small yet intensely aromatic with an extraordinary natural sugar content.", img: anwarRatolImg },
+  { name: "Saroli", desc: "A rare early season variety known for its perfectly balanced sweet and tangy profile.", img: saroliImg },
+  { name: "Dusehri", desc: "Slender, oblong shape with a refreshingly sweet and delicate flavor.", img: dusehriImg },
+  { name: "Langra", desc: "Green skinned even when ripe, with a uniquely complex sweet and tart flavor.", img: langraImg },
+  { name: "Nawabpuri", desc: "A traditional cultivar prized for its aromatic richness and smooth velvety texture.", img: nawabpuriImg },
+  { name: "Sindhri", desc: "The pride of Sindh, celebrated for its large size and exceptionally sweet taste.", img: sindhriImg },
+  { name: "Desi Mango", desc: "The authentic village mango with an intensely concentrated and nostalgic flavor.", img: desiImg },
 ];
 
 const galleryItems = [
@@ -150,12 +108,20 @@ const qualitySteps = [
 ];
 
 const trustItems = [
-  { val: "10,000+", lbl: "Happy Customers" },
   { val: "Farm Fresh", lbl: "Direct from Orchards" },
   { val: "100% Natural", lbl: "Chemical Free" },
   { val: "Premium", lbl: "Quality" },
   { val: "Fast", lbl: "Delivery" },
   { val: "Export Grade", lbl: "Selection" },
+];
+
+const navItems = [
+  ["Home", "#home"],
+  ["Our Mangoes", "#our-mangoes"],
+  ["Farm Journey", "#farm-journey"],
+  ["Gallery", "#gallery"],
+  ["Why The Chosens", "#why-the-chosens"],
+  ["Contact", "#contact"],
 ];
 
 function WhatsAppIcon({ size = 16 }: { size?: number }) {
@@ -189,6 +155,7 @@ function SectionLabel({ children }: { children: string }) {
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     // Set favicon
@@ -215,6 +182,22 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    const onResize = () => {
+      if (window.innerWidth > 900) setMobileOpen(false);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
   const lift = (e: React.MouseEvent<HTMLElement>) => {
     (e.currentTarget as HTMLElement).style.transform = "translateY(-6px) scale(1.01)";
     (e.currentTarget as HTMLElement).style.boxShadow = "12px 18px 38px rgba(0,0,0,0.16), -4px -4px 16px rgba(255,255,255,0.95)";
@@ -228,7 +211,7 @@ export default function App() {
     <div style={{ fontFamily: serif, backgroundColor: C.ivory, overflowX: "hidden", minHeight: "100vh" }}>
 
       {/* ── NAVIGATION ── */}
-      <nav style={{
+      <nav className="main-nav" style={{
         position: "fixed",
         top: "14px",
         left: "50%",
@@ -264,15 +247,8 @@ export default function App() {
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "2px" }}>
-          {[
-            ["Home", "#home"],
-            ["Our Mangoes", "#our-mangoes"],
-            ["Farm Journey", "#farm-journey"],
-            ["Gallery", "#gallery"],
-            ["Why The Chosens", "#why-the-chosens"],
-            ["Contact", "#contact"],
-          ].map(([label, href]) => (
+        <div className="nav-links-desktop" style={{ display: "flex", alignItems: "center", gap: "2px" }}>
+          {navItems.map(([label, href]) => (
             <a key={label} href={href} style={{
               padding: "7px 13px",
               borderRadius: "30px",
@@ -296,7 +272,25 @@ export default function App() {
           ))}
         </div>
 
-        <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
+        <button
+          className="mobile-nav-toggle"
+          onClick={() => setMobileOpen((open) => !open)}
+          aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
+        >
+          {mobileOpen ? (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#053018" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 6 6 18M6 6l12 12"></path>
+            </svg>
+          ) : (
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#053018" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 6h18M3 12h18M3 18h18"></path>
+            </svg>
+          )}
+        </button>
+
+        <a className="order-btn-desktop" href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
           display: "flex", alignItems: "center", gap: "7px",
           padding: "10px 18px", borderRadius: "30px",
           color: "#fff", fontSize: "12.5px", fontFamily: sans, fontWeight: 700,
@@ -313,6 +307,25 @@ export default function App() {
         </a>
       </nav>
 
+      {mobileOpen && (
+        <div id="mobile-navigation" className="mobile-nav-overlay" role="navigation" aria-label="Mobile navigation">
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+            <div style={{ fontWeight: 800, color: C.deepGreen, fontFamily: serif, fontSize: 18 }}>The Chosens</div>
+            <button onClick={() => setMobileOpen(false)} aria-label="Close navigation">
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke={C.deepGreen} strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6 6 18M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          {navItems.map(([label, href]) => (
+            <a key={label} href={href} onClick={() => setMobileOpen(false)}>{label}</a>
+          ))}
+          <div style={{ marginTop: 16 }}>
+            <a href={WA_URL} target="_blank" rel="noreferrer" onClick={() => setMobileOpen(false)} style={{ display: "inline-block", width: "100%", textAlign: "center", padding: "12px 14px", background: "#036231", color: "#fff", borderRadius: 12, textDecoration: "none", fontWeight: 800 }}>Order on WhatsApp</a>
+          </div>
+        </div>
+      )}
+
       {/* ── HERO ── */}
       <section id="home" style={{
         minHeight: "100vh",
@@ -326,7 +339,7 @@ export default function App() {
         <div style={{ position:"absolute", bottom:"-180px", left:"-120px", width:"540px", height:"540px", borderRadius:"50%", background:"radial-gradient(circle, rgba(3,98,49,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
         <div style={{ position:"absolute", top:"30%", right:"5%", width:"220px", height:"220px", borderRadius:"50%", background:"radial-gradient(circle, rgba(252,209,42,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
 
-        <div style={{ maxWidth:"1200px", margin:"0 auto", padding:"0 28px", display:"grid", gridTemplateColumns:"1fr 1fr", gap:"64px", alignItems:"center", width:"100%" }}>
+        <div className="hero-grid" style={{ maxWidth:"1200px", margin:"0 auto", padding:"0 28px", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(320px, 1fr))", gap:"64px", alignItems:"center", width:"100%" }}>
 
           {/* LEFT */}
           <div>
@@ -344,7 +357,7 @@ export default function App() {
 
             <h1 style={{
               fontSize:"clamp(38px, 5.5vw, 64px)",
-              lineHeight:"1.10", color:"#12090"+" 0",
+              lineHeight:"1.10",
               fontWeight:900, letterSpacing:"-1.5px",
               marginBottom:"10px", fontFamily:serif, color:"#180d00",
             }}>
@@ -398,7 +411,7 @@ export default function App() {
 
             {/* mini trust bar */}
             <div style={{ display:"flex", gap:"28px", marginTop:"44px", flexWrap:"wrap" as const }}>
-              {[["10,000+","Happy Customers"],["100% Natural","Certified"],["Farm Fresh","Guaranteed"]].map(([v,l],i)=>(
+              {[["100% Natural","Certified"],["Farm Fresh","Guaranteed"]].map(([v,l],i)=>(
                 <div key={i} style={{ textAlign:"center" as const }}>
                   <div style={{ fontSize:"20px", fontWeight:800, color:C.green, fontFamily:serif }}>{v}</div>
                   <div style={{ fontSize:"11px", fontFamily:sans, color:"#8a7a50", letterSpacing:"0.5px" }}>{l}</div>
@@ -408,43 +421,31 @@ export default function App() {
           </div>
 
           {/* RIGHT */}
-          <div style={{ position:"relative" }}>
-            {/* shadow layer */}
+          <div style={{ position: "relative" }} className="fade-up">
+            {/* softened vertical shadow */}
             <div style={{
-              position:"absolute", top:"24px", left:"24px", right:"-24px", bottom:"-24px",
-              borderRadius:"36px",
-              background:"linear-gradient(145deg, rgba(252,209,42,0.12), rgba(3,98,49,0.07))",
-              boxShadow:"12px 12px 36px rgba(0,0,0,0.14)",
+              position: "absolute", top: 24, left: 0, right: 0, bottom: -8,
+              borderRadius: "36px",
+              background: "linear-gradient(180deg, rgba(252,209,42,0.08), rgba(3,98,49,0.04))",
+              boxShadow: "0 24px 36px rgba(0,0,0,0.12)",
             }} />
             <div style={{
-              position:"relative", borderRadius:"36px", overflow:"hidden",
-              boxShadow:"14px 14px 40px rgba(0,0,0,0.18), -6px -6px 24px rgba(255,255,255,0.90), inset 0 2px 0 rgba(255,255,255,0.70)",
-              border:"2px solid rgba(255,255,255,0.80)",
+              position: "relative", borderRadius: "36px", overflow: "hidden",
+              boxShadow: "0 14px 40px rgba(0,0,0,0.18)",
+              border: "2px solid rgba(255,255,255,0.80)",
             }}>
               <img
-                src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=860&q=85"
+                src={newlyProvided}
                 alt="Pakistan's finest premium mangoes"
-                style={{ width:"100%", height:"520px", objectFit:"cover", display:"block" }}
+                style={{ width: "100%", height: "min(52vh, 520px)", objectFit: "cover", display: "block" }}
               />
-              {/* floating badge */}
-              <div style={{
-                position:"absolute", bottom:"22px", left:"22px",
-                background:"linear-gradient(145deg, rgba(250,247,240,0.97), rgba(255,248,237,0.97))",
-                backdropFilter:"blur(12px)",
-                borderRadius:"18px", padding:"14px 20px",
-                boxShadow:"4px 4px 14px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.95)",
-                border:"1px solid rgba(255,255,255,0.85)",
-              }}>
-                <div style={{ fontSize:"24px", fontWeight:800, color:C.deepGreen, fontFamily:serif, lineHeight:1 }}>10,000+</div>
-                <div style={{ fontSize:"11px", fontFamily:sans, color:"#8a7a50", marginTop:"3px" }}>Happy Customers</div>
-              </div>
               {/* floating quality badge */}
               <div style={{
-                position:"absolute", top:"22px", right:"22px",
-                background:"linear-gradient(145deg,#FDED90,#FCD12A)",
-                borderRadius:"14px", padding:"8px 16px",
-                boxShadow:"3px 3px 10px rgba(180,125,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6)",
-                fontSize:"12px", fontFamily:sans, fontWeight:800, color:C.deepGreen, letterSpacing:"0.5px",
+                position: "absolute", top: "22px", right: "22px",
+                background: "linear-gradient(145deg,#FDED90,#FCD12A)",
+                borderRadius: "14px", padding: "8px 16px",
+                boxShadow: "3px 3px 10px rgba(180,125,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6)",
+                fontSize: "12px", fontFamily: sans, fontWeight: 800, color: C.deepGreen, letterSpacing: "0.5px",
               }}>
                 Export Grade
               </div>
@@ -454,14 +455,14 @@ export default function App() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <section style={{
+      <section className="trust-strip" style={{
         background:"linear-gradient(160deg, #036231 0%, #005B2B 100%)",
         padding:"36px 24px",
         boxShadow:"0 6px 30px rgba(0,50,20,0.30), inset 0 1px 0 rgba(255,255,255,0.08)",
       }}>
-        <div style={{ maxWidth:"1100px", margin:"0 auto", display:"flex", justifyContent:"space-around", alignItems:"center", flexWrap:"wrap" as const, gap:"16px" }}>
+        <div className="trust-grid" style={{ maxWidth:"1100px", margin:"0 auto", display:"flex", justifyContent:"space-around", alignItems:"center", flexWrap:"wrap" as const, gap:"16px" }}>
           {trustItems.map((item,i)=>(
-            <div key={i} style={{
+            <div className="trust-item" key={i} style={{
               display:"flex", flexDirection:"column" as const, alignItems:"center", textAlign:"center" as const,
               padding:"14px 20px", borderRadius:"18px",
               background:"rgba(255,255,255,0.08)",
@@ -491,7 +492,7 @@ export default function App() {
             </p>
           </div>
 
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(260px, 1fr))", gap:"26px" }}>
+          <div className="promise-grid" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(260px, 1fr))", gap:"26px" }}>
             {[
               {
                 title:"Farm Fresh",
@@ -518,7 +519,7 @@ export default function App() {
                 iconPath:"M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z",
               },
             ].map((card,i)=>(
-              <div key={i}
+              <div className="promise-card" key={i}
                 style={{ ...skeuCard, borderRadius:"28px", padding:"36px 28px", transition:"transform 0.3s ease, box-shadow 0.3s ease", cursor:"default" }}
                 onMouseEnter={lift} onMouseLeave={drop}
               >
@@ -558,9 +559,9 @@ export default function App() {
             </p>
           </div>
 
-          <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px, 1fr))", gap:"26px" }}>
+          <div className="mango-grid" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill, minmax(300px, 1fr))", gap:"26px" }}>
             {mangoVarieties.map((m,i)=>(
-              <div key={i}
+              <div className="mango-card" key={i}
                 style={{ ...skeuCard, borderRadius:"28px", overflow:"hidden", transition:"transform 0.3s ease, box-shadow 0.3s ease", cursor:"pointer" }}
                 onMouseEnter={(e)=>{
                   (e.currentTarget as HTMLElement).style.transform="translateY(-8px) scale(1.01)";
@@ -575,7 +576,7 @@ export default function App() {
                   if(img) img.style.transform="scale(1)";
                 }}
               >
-                <div style={{ position:"relative", height:"210px", overflow:"hidden" }}>
+                <div className="var-img-wrap" style={{ position:"relative", overflow:"hidden" }}>
                   <img
                     src={m.img}
                     alt={m.name}
@@ -592,23 +593,9 @@ export default function App() {
                     Premium Grade
                   </div>
                 </div>
-                <div style={{ padding:"24px" }}>
+                <div className="mango-card-body" style={{ padding:"24px" }}>
                   <h3 style={{ fontSize:"19px", fontWeight:800, color:"#180d00", marginBottom:"8px", fontFamily:serif }}>{m.name}</h3>
-                  <p style={{ fontSize:"13.5px", color:"#6a5830", lineHeight:"1.65", fontFamily:sans, marginBottom:"16px" }}>{m.desc}</p>
-                  <div style={{ display:"flex", flexDirection:"column" as const, gap:"6px", marginBottom:"20px" }}>
-                    {[["Origin",m.origin],["Season",m.season]].map(([k,v])=>(
-                      <div key={k} style={{
-                        display:"flex", justifyContent:"space-between",
-                        fontSize:"12px", fontFamily:sans,
-                        padding:"7px 12px", borderRadius:"10px",
-                        background:"linear-gradient(145deg,#FFF8ED,#F4E8D0)",
-                        boxShadow:"inset 2px 2px 6px rgba(0,0,0,0.055), inset -1px -1px 4px rgba(255,255,255,0.80)",
-                      }}>
-                        <span style={{ color:"#9a8a60", fontWeight:500 }}>{k}</span>
-                        <span style={{ color:C.deepGreen, fontWeight:700 }}>{v}</span>
-                      </div>
-                    ))}
-                  </div>
+                  <p style={{ fontSize:"13.5px", color:"#6a5830", lineHeight:"1.65", fontFamily:sans, marginBottom:"20px" }}>{m.desc}</p>
                   <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
                     display:"flex", alignItems:"center", justifyContent:"center", gap:"8px",
                     padding:"11px 0", borderRadius:"50px",
@@ -627,12 +614,12 @@ export default function App() {
       </section>
 
       {/* ── FARM TO DOORSTEP ── */}
-      <section id="farm-journey" style={{
+      <section id="farm-journey" className="farm-section" style={{
         padding:"100px 24px",
         background:"linear-gradient(180deg, #FFF8ED 0%, #FAF7F0 100%)",
       }}>
         <div style={{ maxWidth:"1100px", margin:"0 auto" }}>
-          <div style={{ textAlign:"center" as const, marginBottom:"70px" }}>
+          <div className="section-heading" style={{ textAlign:"center" as const, marginBottom:"70px" }}>
             <SectionLabel>Our Process</SectionLabel>
             <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.8px", marginBottom:"16px", fontFamily:serif }}>
               Farm to Doorstep
@@ -642,20 +629,20 @@ export default function App() {
             </p>
           </div>
 
-          <div style={{ position:"relative" }}>
-            <div style={{
+          <div className="farm-timeline" style={{ position:"relative" }}>
+            <div className="farm-timeline-line" style={{
               position:"absolute", left:"50%", top:"0", bottom:"0",
               width:"2px",
               background:"linear-gradient(180deg, transparent, rgba(252,209,42,0.55) 10%, rgba(252,209,42,0.55) 90%, transparent)",
               transform:"translateX(-50%)",
             }} />
             {farmSteps.map((step,i)=>(
-              <div key={i} style={{
+              <div className="farm-step" key={i} style={{
                 display:"flex",
                 justifyContent:i%2===0?"flex-start":"flex-end",
                 marginBottom:"36px", position:"relative",
               }}>
-                <div style={{
+                <div className="farm-step-dot" style={{
                   position:"absolute", left:"50%", top:"38px",
                   transform:"translate(-50%,-50%)",
                   width:"22px", height:"22px", borderRadius:"50%",
@@ -663,7 +650,7 @@ export default function App() {
                   boxShadow:"0 0 0 5px rgba(252,209,42,0.18), 3px 3px 10px rgba(180,125,0,0.30), -2px -2px 6px rgba(255,255,255,0.90)",
                   zIndex:2,
                 }} />
-                <div style={{
+                <div className="farm-step-card" style={{
                   width:"45%",
                   ...skeuCard,
                   borderRadius:"24px", padding:"28px 30px",
@@ -692,13 +679,13 @@ export default function App() {
       </section>
 
       {/* ── QUALITY PROCESS ── */}
-      <section style={{
+      <section className="quality-section" style={{
         padding:"80px 24px",
         background:"linear-gradient(160deg, #036231 0%, #005B2B 100%)",
         boxShadow:"inset 0 4px 24px rgba(0,0,0,0.10)",
       }}>
         <div style={{ maxWidth:"1100px", margin:"0 auto" }}>
-          <div style={{ textAlign:"center" as const, marginBottom:"56px" }}>
+          <div className="section-heading quality-heading" style={{ textAlign:"center" as const, marginBottom:"56px" }}>
             <h2 style={{ fontSize:"clamp(24px,3.5vw,44px)", fontWeight:900, color:"#fff", letterSpacing:"-0.5px", marginBottom:"14px", fontFamily:serif }}>
               Our Quality Selection Process
             </h2>
@@ -706,10 +693,10 @@ export default function App() {
               Five rigorous steps ensure that only the finest mangoes carry The Chosens name.
             </p>
           </div>
-          <div style={{ display:"flex", justifyContent:"center", alignItems:"center", flexWrap:"wrap" as const, gap:"0" }}>
+          <div className="quality-steps" style={{ display:"flex", justifyContent:"center", alignItems:"center", flexWrap:"wrap" as const, gap:"0" }}>
             {qualitySteps.map((qs,i)=>(
-              <div key={i} style={{ display:"flex", alignItems:"center" }}>
-                <div style={{
+              <div className="quality-step-wrap" key={i} style={{ display:"flex", alignItems:"center" }}>
+                <div className="quality-step-card" style={{
                   display:"flex", flexDirection:"column" as const, alignItems:"center",
                   textAlign:"center" as const, width:"160px", padding:"24px 12px",
                   borderRadius:"24px",
@@ -735,7 +722,7 @@ export default function App() {
                   <div style={{ fontSize:"11px", fontFamily:sans, color:"rgba(255,255,255,0.70)", lineHeight:"1.4" }}>{qs.desc}</div>
                 </div>
                 {i<qualitySteps.length-1 && (
-                  <div style={{ width:"28px", height:"2px", background:"rgba(252,209,42,0.35)", flexShrink:0 }} />
+                  <div className="quality-connector" style={{ width:"28px", height:"2px", background:"rgba(252,209,42,0.35)", flexShrink:0 }} />
                 )}
               </div>
             ))}
@@ -743,79 +730,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── MANGO DEALS ── */}
-      <section style={{
-        padding:"100px 24px",
-        background:"linear-gradient(180deg, #FFF8ED 0%, #F4E8D0 100%)",
-      }}>
-        <div style={{ maxWidth:"1200px", margin:"0 auto" }}>
-          <div style={{ textAlign:"center" as const, marginBottom:"60px" }}>
-            <SectionLabel>Seasonal Collection</SectionLabel>
-            <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.8px", marginBottom:"16px", fontFamily:serif }}>
-              Featured Mango Deals
-            </h2>
-            <p style={{ fontSize:"17px", color:"#6a5830", fontFamily:sans, maxWidth:"480px", margin:"0 auto", lineHeight:"1.75" }}>
-              Inspired by luxury product listings. Show featured seasonal collections with large imagery and premium packaging visuals.
-            </p>
-          </div>
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"26px" }}>
-            {[
-              {
-                title:"Chaunsa Gift Box",
-                sub:"Premium 5 kg selection",
-                desc:"Our most prestigious box featuring premium Chaunsa mangoes, hand picked and gift wrapped for gifting or personal indulgence. A true luxury experience.",
-                img:"https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=860&q=85",
-                badge:"Best Seller",
-              },
-              {
-                title:"Mixed Variety Box",
-                sub:"A curated tasting experience",
-                desc:"Sample Pakistan's finest with our curated assortment box featuring four premium varieties, each selected at peak ripeness and packed with care.",
-                img:"https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=860&q=85",
-                badge:"Customer Favorite",
-              },
-            ].map((deal,i)=>(
-              <div key={i}
-                style={{ ...skeuCard, borderRadius:"28px", overflow:"hidden", transition:"transform 0.3s ease, box-shadow 0.3s ease" }}
-                onMouseEnter={lift} onMouseLeave={drop}
-              >
-                <div style={{ position:"relative", height:"270px", overflow:"hidden" }}>
-                  <img
-                    src={deal.img} alt={deal.title}
-                    style={{ width:"100%", height:"100%", objectFit:"cover", display:"block", transition:"transform 0.45s ease" }}
-                    onMouseEnter={(e)=>{ (e.currentTarget as HTMLElement).style.transform="scale(1.05)"; }}
-                    onMouseLeave={(e)=>{ (e.currentTarget as HTMLElement).style.transform="scale(1)"; }}
-                  />
-                  <div style={{
-                    position:"absolute", top:"16px", left:"16px",
-                    background:"linear-gradient(145deg, #04913e, #005B2B)",
-                    color:"#fff", borderRadius:"10px", padding:"5px 14px",
-                    fontSize:"11px", fontFamily:sans, fontWeight:800,
-                    boxShadow:"2px 2px 6px rgba(0,0,0,0.20)", letterSpacing:"0.5px",
-                  }}>
-                    {deal.badge}
-                  </div>
-                </div>
-                <div style={{ padding:"28px 32px" }}>
-                  <h3 style={{ fontSize:"22px", fontWeight:800, color:"#180d00", marginBottom:"6px", fontFamily:serif }}>{deal.title}</h3>
-                  <p style={{ fontSize:"14px", fontWeight:700, color:C.green, marginBottom:"12px", fontFamily:sans }}>{deal.sub}</p>
-                  <p style={{ fontSize:"14px", color:"#6a5830", lineHeight:"1.68", fontFamily:sans, marginBottom:"24px" }}>{deal.desc}</p>
-                  <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
-                    display:"inline-flex", alignItems:"center", gap:"8px",
-                    padding:"12px 28px", borderRadius:"50px",
-                    color:C.deepGreen, fontSize:"14px", fontFamily:sans, fontWeight:700,
-                    textDecoration:"none", letterSpacing:"0.2px",
-                    ...skeuBtnYellow,
-                  }}>
-                    <WhatsAppIcon size={14} />
-                    Order on WhatsApp
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Featured Mango Deals removed */}
 
       {/* ── PHOTO GALLERY ── */}
       <section id="gallery" style={{
@@ -828,13 +743,13 @@ export default function App() {
             <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.8px", marginBottom:"16px", fontFamily:serif }}>
               From Our Orchards
             </h2>
-            <p style={{ fontSize:"17px", color:"#6a5830", fontFamily:sans, maxWidth:"460px", margin:"0 auto", lineHeight:"1.75" }}>
-              A visual journey through the finest mango orchards of Pakistan, captured at the peak of harvest season.
+            <p style={{ fontSize:"17px", color:"#6a5830", fontFamily:sans, maxWidth:"600px", margin:"0 auto", lineHeight:"1.75" }}>
+              A visual journey through the finest mango orchards of Pakistan, captured at the peak of harvest season. The first and the last mango in the box wears the same crown.
             </p>
           </div>
-          <div style={{ columns:"3 260px", gap:"20px" }}>
+          <div className="columns-3" style={{ gap:"20px", columns: "3 260px" }}>
             {galleryItems.map((img,i)=>(
-              <div
+              <div className="fade-up"
                 key={i}
                 style={{
                   breakInside:"avoid", marginBottom:"20px",
@@ -876,11 +791,13 @@ export default function App() {
             textAlign:"center" as const,
             boxShadow:"14px 14px 44px rgba(0,0,0,0.12), -7px -7px 28px rgba(255,255,255,0.95), inset 0 2px 0 rgba(255,255,255,0.88)",
           }}>
-            <img src={logoImg} alt="The Chosens" style={{
-              width:"88px", height:"88px", objectFit:"contain", borderRadius:"50%",
-              boxShadow:"0 4px 20px rgba(252,209,42,0.45), 4px 4px 12px rgba(0,0,0,0.12)",
-              marginBottom:"28px",
-            }} />
+            <div style={{ display:"flex", justifyContent:"center", marginBottom:"18px" }}>
+              <img src={logoImg} alt="The Chosens" style={{
+                width:"88px", height:"88px", objectFit:"contain", borderRadius:"50%",
+                boxShadow:"0 4px 20px rgba(252,209,42,0.45), 4px 4px 12px rgba(0,0,0,0.12)",
+                
+              }} />
+            </div>
             <h2 style={{ fontSize:"clamp(24px,4vw,46px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.8px", marginBottom:"16px", fontFamily:serif }}>
               Order Your Premium Mangoes Today
             </h2>
@@ -917,14 +834,14 @@ export default function App() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer style={{
+      <footer className="site-footer" style={{
         background:"linear-gradient(145deg, #FAF7F0 0%, #F0E8D0 100%)",
         borderTop:"1px solid rgba(252,209,42,0.18)",
         padding:"80px 24px 40px",
         boxShadow:"inset 0 4px 28px rgba(0,0,0,0.04)",
       }}>
         <div style={{ maxWidth:"1200px", margin:"0 auto" }}>
-          <div style={{ display:"grid", gridTemplateColumns:"2fr 1fr 1fr 1fr", gap:"48px", marginBottom:"60px" }}>
+          <div className="footer-grid" style={{ display:"grid", gridTemplateColumns:"2fr 1fr 1fr 1fr", gap:"48px", marginBottom:"60px" }}>
 
             {/* Brand */}
             <div>
@@ -1001,19 +918,8 @@ export default function App() {
                 </div>
                 <div>
                   <div style={{ fontSize:"10px", fontFamily:sans, color:"#9a8a60", fontWeight:700, letterSpacing:"1px", textTransform:"uppercase" as const, marginBottom:"10px" }}>Follow Us</div>
-                  <div style={{ display:"flex", gap:"8px" }}>
-                    {["F","I","T"].map((s,i)=>(
-                      <div key={i} style={{
-                        width:"36px", height:"36px", borderRadius:"10px",
-                        background:"linear-gradient(145deg,#ffffff,#f0ede6)",
-                        boxShadow:"3px 3px 8px rgba(0,0,0,0.10), -2px -2px 6px rgba(255,255,255,0.95), inset 0 1px 0 rgba(255,255,255,0.85)",
-                        border:"1px solid rgba(255,255,255,0.70)",
-                        display:"flex", alignItems:"center", justifyContent:"center",
-                        fontSize:"13px", fontWeight:800, color:C.deepGreen,
-                        cursor:"pointer", fontFamily:sans,
-                      }}>{s}</div>
-                    ))}
-                  </div>
+                  {/* Follow icons removed per request */}
+                  <div />
                 </div>
               </div>
             </div>
@@ -1027,7 +933,7 @@ export default function App() {
           }} />
 
           {/* Copyright */}
-          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap" as const, gap:"12px" }}>
+          <div className="footer-bottom" style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap" as const, gap:"12px" }}>
             <p style={{ fontSize:"13px", fontFamily:sans, color:"#9a8a60" }}>
               2024 The Chosens. All rights reserved. Pakistan's Finest Mangoes.
             </p>
@@ -1048,6 +954,7 @@ export default function App() {
 
       {/* ── FLOATING WHATSAPP ── */}
       <a
+        className="floating-whatsapp"
         href={WA_URL}
         target="_blank"
         rel="noopener noreferrer"
