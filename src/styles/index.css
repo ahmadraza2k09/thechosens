@@ -73,10 +73,10 @@ html{scroll-behavior:smooth}
 	.promise-card{padding:28px 22px !important}
 	.mango-card-body{padding:20px !important}
 	.farm-section{padding-top:76px !important;padding-bottom:76px !important}
-	.farm-timeline{padding-left:28px}
-	.farm-timeline-line{left:10px !important;transform:none !important}
-	.farm-step{justify-content:flex-start !important;margin-bottom:22px !important}
-	.farm-step-dot{left:10px !important;width:18px !important;height:18px !important}
+	.farm-timeline{padding-left:0}
+	.farm-timeline-line{left:17px !important;transform:none !important}
+	.farm-step{justify-content:flex-start !important;margin-bottom:22px !important;padding-left:46px}
+	.farm-step-dot{left:8px !important;width:18px !important;height:18px !important}
 	.farm-step-card{width:100% !important;padding:24px 22px !important;border-radius:20px !important}
 	.quality-section{padding-top:68px !important;padding-bottom:68px !important}
 	.quality-steps{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important}
@@ -113,7 +113,10 @@ html{scroll-behavior:smooth}
 	.trust-strip{padding-top:22px !important;padding-bottom:22px !important}
 	.trust-grid{grid-template-columns:1fr !important}
 	.promise-card{padding:24px 20px !important}
-	.farm-timeline{padding-left:22px}
+	.farm-timeline{padding-left:0}
+	.farm-step{padding-left:40px}
+	.farm-timeline-line{left:15px !important}
+	.farm-step-dot{left:6px !important}
 	.farm-step-card{padding:22px 18px !important}
 	.quality-section{padding-top:56px !important;padding-bottom:56px !important}
 }
