@@ -343,18 +343,6 @@ export default function App() {
 
           {/* LEFT */}
           <div>
-            <div style={{
-              display:"inline-flex", alignItems:"center", gap:"8px",
-              padding:"8px 20px", borderRadius:"40px",
-              background:"linear-gradient(145deg,#FFF8ED,#F4E8D0)",
-              boxShadow:"3px 3px 10px rgba(0,0,0,0.08), -2px -2px 8px rgba(255,255,255,0.95), inset 0 1px 0 rgba(255,255,255,0.9)",
-              border:"1px solid rgba(252,209,42,0.4)",
-              marginBottom:"28px",
-              fontSize:"13px", fontFamily:sans, color:C.green, fontWeight:700, letterSpacing:"0.3px",
-            }}>
-              Selectively Chosen. Devotedly Delivered.
-            </div>
-
             <h1 style={{
               fontSize:"clamp(38px, 5.5vw, 64px)",
               lineHeight:"1.10",
@@ -370,7 +358,7 @@ export default function App() {
               fontWeight:500, letterSpacing:"-0.3px",
               marginBottom:"22px", fontFamily:serif,
             }}>
-              Delivered Fresh To Your Doorstep.
+              Selectively Chosen. Devotedly Delivered.
             </h2>
             <p style={{
               fontSize:"17px", lineHeight:"1.80", color:"#5a4822",
