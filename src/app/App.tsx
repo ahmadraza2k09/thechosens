@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-import logoImg from "../imports/1f09be69-178d-4e9a-bb21-19f2eb0cdafa-1.png";
+import logoImg from "../../assets/the-chosens-logo.png";
+import trademarkCertificateImg from "../../assets/ipo-trademark-certificate.jfif";
 import gallery1 from "../imports/1c41cff6-c630-4d8a-ad34-739d0f9972a7-1.jfif";
 import gallery2 from "../imports/2f8eb30d-4eb2-46a8-863f-ff05160b890a-1.jfif";
 import gallery3 from "../imports/30d28b0f-4cd1-446e-b7b9-50b8bd0d14a8-1.jfif";
@@ -26,8 +27,8 @@ const WA_PRIMARY = "+92 337 6113633";
 const WA_SECONDARY = "+92 314 4225277";
 
 const C = {
-  yellow: "#FCD12A",
-  golden: "#F7C830",
+  yellow: "#ffdc1b",
+  golden: "#ffdc1b",
   green: "#036231",
   deepGreen: "#005B2B",
   ivory: "#FFF8ED",
@@ -35,7 +36,8 @@ const C = {
   beige: "#F4E8D0",
 };
 
-const serif = "'Playfair Display', Georgia, serif";
+const brandSerif = "'Cormorant Garamond', Georgia, serif";
+const serif = brandSerif;
 const sans = "'Inter', 'Arial', sans-serif";
 
 const skeuCard = {
@@ -50,7 +52,7 @@ const skeuBtnGreen = {
 };
 
 const skeuBtnYellow = {
-  background: "linear-gradient(160deg, #FDED90 0%, #FCD12A 50%, #F0B800 100%)",
+  background: "linear-gradient(160deg, #fff0a3 0%, #ffdc1b 55%, #d8b400 100%)",
   boxShadow: "5px 5px 14px rgba(180,125,0,0.35), -2px -2px 8px rgba(255,255,255,0.80), inset 0 2px 0 rgba(255,255,255,0.50), inset 0 -1px 0 rgba(0,0,0,0.08)",
 };
 
@@ -108,6 +110,7 @@ const qualitySteps = [
 ];
 
 const trustItems = [
+  { val: "IPO Filed", lbl: "Trade Marks Registry" },
   { val: "Farm Fresh", lbl: "Direct from Orchards" },
   { val: "100% Natural", lbl: "Chemical Free" },
   { val: "Premium", lbl: "Quality" },
@@ -119,6 +122,7 @@ const navItems = [
   ["Home", "#home"],
   ["Our Mangoes", "#our-mangoes"],
   ["Farm Journey", "#farm-journey"],
+  ["Trademark", "#trademark"],
   ["Gallery", "#gallery"],
   ["Why The Chosens", "#why-the-chosens"],
   ["Contact", "#contact"],
@@ -147,7 +151,7 @@ function SectionLabel({ children }: { children: string }) {
       borderRadius: "30px",
       background: "linear-gradient(145deg, #FFF8ED, #F4E8D0)",
       boxShadow: "3px 3px 8px rgba(0,0,0,0.08), -2px -2px 6px rgba(255,255,255,0.95)",
-      border: "1px solid rgba(252,209,42,0.3)",
+      border: "1px solid rgba(255,220,27,0.3)",
     }}>{children}</div>
   );
 }
@@ -238,10 +242,10 @@ export default function App() {
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
           <img src={logoImg} alt="The Chosens Logo" style={{
-            width: "42px", height: "42px", objectFit: "contain", borderRadius: "50%",
-            boxShadow: "0 2px 10px rgba(252,209,42,0.45), 2px 2px 6px rgba(0,0,0,0.1)",
+            width: "158px", height: "42px", objectFit: "contain",
+            filter: "drop-shadow(0 2px 5px rgba(255,220,27,0.35))",
           }} />
-          <div>
+          <div className="nav-brand-copy">
             <div style={{ fontSize: "15px", fontWeight: 800, color: C.deepGreen, letterSpacing: "-0.2px", fontFamily: serif }}>The Chosens</div>
             <div style={{ fontSize: "9px", fontFamily: sans, color: "#8a7a50", letterSpacing: "1.5px", fontWeight: 600, textTransform: "uppercase" }}>Premium Mangoes</div>
           </div>
@@ -261,7 +265,7 @@ export default function App() {
               transition: "background 0.2s ease, color 0.2s ease",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "linear-gradient(145deg,rgba(252,209,42,0.18),rgba(247,200,48,0.12))";
+              (e.currentTarget as HTMLElement).style.background = "linear-gradient(145deg,rgba(255,220,27,0.18),rgba(255,220,27,0.12))";
               (e.currentTarget as HTMLElement).style.color = C.deepGreen;
             }}
             onMouseLeave={(e) => {
@@ -310,7 +314,7 @@ export default function App() {
       {mobileOpen && (
         <div id="mobile-navigation" className="mobile-nav-overlay" role="navigation" aria-label="Mobile navigation">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-            <div style={{ fontWeight: 800, color: C.deepGreen, fontFamily: serif, fontSize: 18 }}>The Chosens</div>
+            <img src={logoImg} alt="The Chosens" style={{ width: "150px", height: "36px", objectFit: "contain" }} />
             <button onClick={() => setMobileOpen(false)} aria-label="Close navigation">
               <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke={C.deepGreen} strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 6 6 18M6 6l12 12"></path>
@@ -335,9 +339,9 @@ export default function App() {
         position: "relative", overflow: "hidden",
       }}>
         {/* decorative circles */}
-        <div style={{ position:"absolute", top:"-120px", right:"-80px", width:"640px", height:"640px", borderRadius:"50%", background:"radial-gradient(circle, rgba(252,209,42,0.09) 0%, transparent 70%)", pointerEvents:"none" }} />
+        <div style={{ position:"absolute", top:"-120px", right:"-80px", width:"640px", height:"640px", borderRadius:"50%", background:"radial-gradient(circle, rgba(255,220,27,0.09) 0%, transparent 70%)", pointerEvents:"none" }} />
         <div style={{ position:"absolute", bottom:"-180px", left:"-120px", width:"540px", height:"540px", borderRadius:"50%", background:"radial-gradient(circle, rgba(3,98,49,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
-        <div style={{ position:"absolute", top:"30%", right:"5%", width:"220px", height:"220px", borderRadius:"50%", background:"radial-gradient(circle, rgba(252,209,42,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
+        <div style={{ position:"absolute", top:"30%", right:"5%", width:"220px", height:"220px", borderRadius:"50%", background:"radial-gradient(circle, rgba(255,220,27,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
 
         <div className="hero-grid" style={{ maxWidth:"1200px", margin:"0 auto", padding:"0 28px", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(320px, 1fr))", gap:"64px", alignItems:"center", width:"100%" }}>
 
@@ -364,7 +368,7 @@ export default function App() {
               fontSize:"17px", lineHeight:"1.80", color:"#5a4822",
               marginBottom:"42px", fontFamily:sans, maxWidth:"460px",
             }}>
-              Every mango is individually hand selected to ensure premium quality, iconic aroma, and unforgettable flavor.
+              Every mango is individually hand selected to ensure premium quality, iconic aroma, and unforgettable flavor from a brand officially filed with the Government of Pakistan IPO Trade Marks Registry.
             </p>
 
             <div style={{ display:"flex", gap:"14px", flexWrap:"wrap" as const }}>
@@ -414,7 +418,7 @@ export default function App() {
             <div style={{
               position: "absolute", top: 24, left: 0, right: 0, bottom: -8,
               borderRadius: "36px",
-              background: "linear-gradient(180deg, rgba(252,209,42,0.08), rgba(3,98,49,0.04))",
+              background: "linear-gradient(180deg, rgba(255,220,27,0.08), rgba(3,98,49,0.04))",
               boxShadow: "0 24px 36px rgba(0,0,0,0.12)",
             }} />
             <div style={{
@@ -430,7 +434,7 @@ export default function App() {
               {/* floating quality badge */}
               <div style={{
                 position: "absolute", top: "22px", right: "22px",
-                background: "linear-gradient(145deg,#FDED90,#FCD12A)",
+                background: "linear-gradient(145deg,#fff0a3,#ffdc1b)",
                 borderRadius: "14px", padding: "8px 16px",
                 boxShadow: "3px 3px 10px rgba(180,125,0,0.3), inset 0 1px 0 rgba(255,255,255,0.6)",
                 fontSize: "12px", fontFamily: sans, fontWeight: 800, color: C.deepGreen, letterSpacing: "0.5px",
@@ -513,7 +517,7 @@ export default function App() {
               >
                 <div style={{
                   width:"62px", height:"62px", borderRadius:"18px",
-                  background:"linear-gradient(145deg, #FDEF94, #FCD12A)",
+                  background:"linear-gradient(145deg, #fff0a3, #ffdc1b)",
                   boxShadow:"4px 4px 12px rgba(180,125,0,0.26), -2px -2px 8px rgba(255,255,255,0.85), inset 0 1px 0 rgba(255,255,255,0.60)",
                   display:"flex", alignItems:"center", justifyContent:"center",
                   marginBottom:"24px", flexShrink:0,
@@ -572,7 +576,7 @@ export default function App() {
                   />
                   <div style={{
                     position:"absolute", top:"12px", right:"12px",
-                    background:"linear-gradient(145deg,#FDEF94,#FCD12A)",
+                    background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
                     borderRadius:"10px", padding:"4px 12px",
                     fontSize:"10px", fontFamily:sans, fontWeight:800, color:C.deepGreen,
                     boxShadow:"2px 2px 6px rgba(0,0,0,0.14), inset 0 1px 0 rgba(255,255,255,0.55)",
@@ -621,7 +625,7 @@ export default function App() {
             <div className="farm-timeline-line" style={{
               position:"absolute", left:"50%", top:"0", bottom:"0",
               width:"2px",
-              background:"linear-gradient(180deg, transparent, rgba(252,209,42,0.55) 10%, rgba(252,209,42,0.55) 90%, transparent)",
+              background:"linear-gradient(180deg, transparent, rgba(255,220,27,0.55) 10%, rgba(255,220,27,0.55) 90%, transparent)",
               transform:"translateX(-50%)",
             }} />
             {farmSteps.map((step,i)=>(
@@ -634,8 +638,8 @@ export default function App() {
                   position:"absolute", left:"50%", top:"38px",
                   transform:"translate(-50%,-50%)",
                   width:"22px", height:"22px", borderRadius:"50%",
-                  background:"linear-gradient(145deg,#FDEF94,#FCD12A)",
-                  boxShadow:"0 0 0 5px rgba(252,209,42,0.18), 3px 3px 10px rgba(180,125,0,0.30), -2px -2px 6px rgba(255,255,255,0.90)",
+                  background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
+                  boxShadow:"0 0 0 5px rgba(255,220,27,0.18), 3px 3px 10px rgba(180,125,0,0.30), -2px -2px 6px rgba(255,255,255,0.90)",
                   zIndex:2,
                 }} />
                 <div className="farm-step-card" style={{
@@ -652,7 +656,7 @@ export default function App() {
                     fontSize:"11px", fontFamily:sans, fontWeight:800, color:C.green,
                     letterSpacing:"2px", marginBottom:"10px",
                     padding:"4px 14px", borderRadius:"20px",
-                    background:"linear-gradient(145deg,#FDEF94,#FCD12A)",
+                    background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
                     boxShadow:"2px 2px 6px rgba(180,125,0,0.20), inset 0 1px 0 rgba(255,255,255,0.55)",
                   }}>
                     Step {step.num}
@@ -698,7 +702,7 @@ export default function App() {
                 >
                   <div style={{
                     width:"50px", height:"50px", borderRadius:"14px",
-                    background:"linear-gradient(145deg,#FDEF94,#FCD12A)",
+                    background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
                     boxShadow:"4px 4px 10px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.55)",
                     display:"flex", alignItems:"center", justifyContent:"center",
                     marginBottom:"14px",
@@ -710,7 +714,7 @@ export default function App() {
                   <div style={{ fontSize:"11px", fontFamily:sans, color:"rgba(255,255,255,0.70)", lineHeight:"1.4" }}>{qs.desc}</div>
                 </div>
                 {i<qualitySteps.length-1 && (
-                  <div className="quality-connector" style={{ width:"28px", height:"2px", background:"rgba(252,209,42,0.35)", flexShrink:0 }} />
+                  <div className="quality-connector" style={{ width:"28px", height:"2px", background:"rgba(255,220,27,0.35)", flexShrink:0 }} />
                 )}
               </div>
             ))}
@@ -719,6 +723,66 @@ export default function App() {
       </section>
 
       {/* Featured Mango Deals removed */}
+
+      {/* ── TRADEMARK PROOF ── */}
+      <section id="trademark" className="trademark-section" style={{
+        padding:"100px 24px",
+        background:"linear-gradient(180deg, #FFF8ED 0%, #FAF7F0 100%)",
+      }}>
+        <div style={{ maxWidth:"1120px", margin:"0 auto", display:"grid", gridTemplateColumns:"minmax(0, 0.95fr) minmax(320px, 1.05fr)", gap:"42px", alignItems:"center" }}>
+          <div>
+            <SectionLabel>Trade Marks Registry</SectionLabel>
+            <div style={{ display:"flex", alignItems:"center", gap:"18px", marginBottom:"24px", flexWrap:"wrap" as const }}>
+              <img src={logoImg} alt="The Chosens logo" style={{ width:"min(100%, 310px)", height:"auto", objectFit:"contain", filter:"drop-shadow(0 8px 14px rgba(0,55,22,0.16))" }} />
+              <div aria-label="Trademark application badge" style={{
+                width:"68px", height:"68px", borderRadius:"50%",
+                display:"flex", alignItems:"center", justifyContent:"center",
+                background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
+                color:C.deepGreen, fontFamily:serif, fontSize:"24px", fontWeight:900,
+                boxShadow:"5px 5px 14px rgba(180,125,0,0.28), inset 0 1px 0 rgba(255,255,255,0.60)",
+                border:"1px solid rgba(255,255,255,0.7)",
+              }}>TM</div>
+            </div>
+            <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.4px", marginBottom:"18px", fontFamily:serif, lineHeight:1.12 }}>
+              Officially Filed With Pakistan's IPO Trade Marks Registry
+            </h2>
+            <p style={{ fontSize:"16.5px", color:"#5a4822", fontFamily:sans, lineHeight:"1.78", marginBottom:"24px", maxWidth:"560px" }}>
+              The Chosens logo has been filed with the Government of Pakistan Intellectual Property Organisation, Trade Marks Registry. Application number <strong style={{ color:C.deepGreen }}>874257</strong> is shown in the official acknowledgement receipt displayed here as proof.
+            </p>
+            <div className="trademark-facts" style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0, 1fr))", gap:"12px", maxWidth:"560px" }}>
+              {[
+                ["Authority", "Government of Pakistan IPO"],
+                ["Registry", "Trade Marks Registry"],
+                ["Application", "874257"],
+                ["Filing Date", "06/04/2026"],
+              ].map(([label,value])=>(
+                <div key={label} style={{
+                  padding:"14px 16px", borderRadius:"16px",
+                  background:"rgba(255,255,255,0.62)",
+                  boxShadow:"inset 0 1px 0 rgba(255,255,255,0.88), 3px 3px 12px rgba(0,0,0,0.06)",
+                  border:"1px solid rgba(255,220,27,0.22)",
+                }}>
+                  <div style={{ fontSize:"10px", fontFamily:sans, textTransform:"uppercase" as const, letterSpacing:"1px", color:"#9a8a60", fontWeight:800, marginBottom:"5px" }}>{label}</div>
+                  <div style={{ fontSize:"14px", fontFamily:sans, color:C.deepGreen, fontWeight:800 }}>{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{
+            ...skeuCard,
+            borderRadius:"24px",
+            padding:"16px",
+            boxShadow:"12px 16px 44px rgba(0,0,0,0.14), -6px -6px 24px rgba(255,255,255,0.92)",
+          }}>
+            <img src={trademarkCertificateImg} alt="IPO Trade Marks Registry acknowledgement receipt for The Chosens application number 874257" style={{
+              display:"block", width:"100%", height:"auto", borderRadius:"16px", border:"1px solid rgba(0,0,0,0.08)",
+            }} />
+            <p style={{ margin:"14px 4px 2px", fontSize:"12px", lineHeight:"1.55", fontFamily:sans, color:"#7a6a42" }}>
+              Proof document: acknowledgement receipt of application from the Government of Pakistan IPO Trade Marks Registry.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── PHOTO GALLERY ── */}
       <section id="gallery" style={{
@@ -781,8 +845,8 @@ export default function App() {
           }}>
             <div style={{ display:"flex", justifyContent:"center", marginBottom:"18px" }}>
               <img src={logoImg} alt="The Chosens" style={{
-                width:"88px", height:"88px", objectFit:"contain", borderRadius:"50%",
-                boxShadow:"0 4px 20px rgba(252,209,42,0.45), 4px 4px 12px rgba(0,0,0,0.12)",
+                width:"240px", height:"64px", objectFit:"contain",
+                filter:"drop-shadow(0 5px 12px rgba(255,220,27,0.35))",
                 
               }} />
             </div>
@@ -824,7 +888,7 @@ export default function App() {
       {/* ── FOOTER ── */}
       <footer className="site-footer" style={{
         background:"linear-gradient(145deg, #FAF7F0 0%, #F0E8D0 100%)",
-        borderTop:"1px solid rgba(252,209,42,0.18)",
+        borderTop:"1px solid rgba(255,220,27,0.18)",
         padding:"80px 24px 40px",
         boxShadow:"inset 0 4px 28px rgba(0,0,0,0.04)",
       }}>
@@ -835,10 +899,10 @@ export default function App() {
             <div>
               <div style={{ display:"flex", alignItems:"center", gap:"12px", marginBottom:"20px" }}>
                 <img src={logoImg} alt="The Chosens" style={{
-                  width:"54px", height:"54px", objectFit:"contain", borderRadius:"50%",
-                  boxShadow:"0 3px 14px rgba(252,209,42,0.45), 3px 3px 8px rgba(0,0,0,0.10)",
+                  width:"190px", height:"52px", objectFit:"contain",
+                  filter:"drop-shadow(0 4px 10px rgba(255,220,27,0.32))",
                 }} />
-                <div>
+                <div className="footer-brand-copy">
                   <div style={{ fontSize:"18px", fontWeight:800, color:C.deepGreen, fontFamily:serif }}>The Chosens</div>
                   <div style={{ fontSize:"10px", fontFamily:sans, color:"#8a7a50", letterSpacing:"1.5px", fontWeight:600, textTransform:"uppercase" as const }}>Premium Mangoes</div>
                 </div>
@@ -846,7 +910,7 @@ export default function App() {
               <p style={{ fontSize:"14px", fontFamily:sans, color:"#6a5830", lineHeight:"1.80", marginBottom:"24px", maxWidth:"280px" }}>
                 Selectively Chosen. Devotedly Delivered.
                 <br /><br />
-                Pakistan's finest mangoes delivered fresh to your doorstep with unwavering commitment to quality and authenticity.
+                Pakistan's finest mangoes delivered fresh to your doorstep with unwavering commitment to quality, authenticity, and an IPO Trade Marks Registry filed brand identity.
               </p>
               <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
                 display:"inline-flex", alignItems:"center", gap:"8px",
@@ -880,7 +944,7 @@ export default function App() {
               <h4 style={{ fontSize:"13px", fontWeight:700, color:"#180d00", letterSpacing:"1.5px", textTransform:"uppercase" as const, marginBottom:"20px", fontFamily:sans }}>
                 Quick Links
               </h4>
-              {[["Home","#home"],["Our Mangoes","#our-mangoes"],["Farm Journey","#farm-journey"],["Gallery","#gallery"],["Why The Chosens","#why-the-chosens"],["Contact","#contact"]].map(([l,h])=>(
+              {navItems.map(([l,h])=>(
                 <div key={l} style={{ marginBottom:"8px" }}>
                   <a href={h} style={{ fontSize:"13px", fontFamily:sans, color:"#6a5830", textDecoration:"none", transition:"color 0.2s" }}
                     onMouseEnter={(e)=>{ (e.currentTarget as HTMLElement).style.color=C.green; }}
@@ -999,7 +1063,7 @@ export default function App() {
               style={{
                 position:"absolute", top:"-16px", right:"-16px",
                 width:"46px", height:"46px", borderRadius:"50%",
-                background:"linear-gradient(145deg,#FDEF94,#FCD12A)",
+                background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
                 border:"none", cursor:"pointer",
                 display:"flex", alignItems:"center", justifyContent:"center",
                 boxShadow:"4px 4px 14px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.55)",
@@ -1015,3 +1079,4 @@ export default function App() {
     </div>
   );
 }
+

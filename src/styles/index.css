@@ -26,8 +26,11 @@ html{scroll-behavior:smooth}
 }
 
 /* Mobile nav dropdown */
-.mobile-nav-toggle{display:none;background:linear-gradient(145deg,#FFF8ED,#F4E8D0);border:1px solid rgba(252,209,42,0.35);color:var(--color-primary);padding:9px;border-radius:14px;cursor:pointer;align-items:center;justify-content:center;box-shadow:3px 3px 10px rgba(0,0,0,0.10),-2px -2px 8px rgba(255,255,255,0.85)}
+.mobile-nav-toggle{display:none;background:linear-gradient(145deg,#FFF8ED,#F4E8D0);border:1px solid rgba(255,220,27,0.35);color:var(--color-primary);padding:9px;border-radius:14px;cursor:pointer;align-items:center;justify-content:center;box-shadow:3px 3px 10px rgba(0,0,0,0.10),-2px -2px 8px rgba(255,255,255,0.85)}
 .mobile-nav-overlay{display:none}
+@media (max-width:1180px){
+	.nav-brand-copy{display:none}
+}
 @media (max-width:900px){
 	.mobile-nav-toggle{display:flex !important}
 	.nav-links-desktop{display:none !important}
@@ -80,6 +83,7 @@ html{scroll-behavior:smooth}
 	.farm-step-card{width:100% !important;padding:24px 22px !important;border-radius:20px !important}
 	.quality-section{padding-top:68px !important;padding-bottom:68px !important}
 	.quality-steps{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:14px !important}
+	.trademark-section>div{grid-template-columns:1fr !important;gap:28px !important}
 	.footer-grid{grid-template-columns:1fr 1fr !important;gap:34px !important}
 	.footer-bottom{justify-content:center !important;text-align:center}
 }
@@ -95,7 +99,13 @@ html{scroll-behavior:smooth}
 	.quality-heading{margin-bottom:34px !important}
 	.quality-steps{grid-template-columns:1fr !important}
 	.quality-step-card{min-height:0;padding:18px 14px !important;border-radius:18px !important}
+	.trademark-section{padding-top:58px !important;padding-bottom:58px !important}
+	.trademark-section img{max-width:100%}
+	.trademark-section h2{font-size:clamp(28px,11vw,42px) !important}
+	.trademark-section p{font-size:15px !important}
+	.trademark-facts{grid-template-columns:1fr !important}
 	.footer-grid{grid-template-columns:1fr !important;gap:28px !important;margin-bottom:36px !important}
+	.footer-brand-copy{display:none}
 	.site-footer{padding-top:56px !important}
 	.floating-whatsapp{width:54px !important;height:54px !important;right:18px !important;bottom:18px !important}
 }
@@ -120,3 +130,4 @@ html{scroll-behavior:smooth}
 	.farm-step-card{padding:22px 18px !important}
 	.quality-section{padding-top:56px !important;padding-bottom:56px !important}
 }
+
