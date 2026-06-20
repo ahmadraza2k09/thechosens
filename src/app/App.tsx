@@ -20,7 +20,7 @@ import dusehriImg from "../../assets/dusehri-mango.jpg";
 import langraImg from "../../assets/langra-mango.jpg";
 import nawabpuriImg from "../../assets/nawabpuri-mango.jpg";
 import sindhriImg from "../../assets/sindhri-mango.jpg";
-import desiImg from "../../assets/desi-mango.jpg";
+import royalBloodDesiImg from "../../assets/royal-blood-desi.jfif";
 
 const WA_URL = "https://wa.me/923376113633";
 const WA_PRIMARY = "+92 337 6113633";
@@ -38,7 +38,7 @@ const C = {
 
 const brandSerif = "'Cormorant Garamond', Georgia, serif";
 const serif = brandSerif;
-const sans = "'Inter', 'Arial', sans-serif";
+const sans = "'Manrope', 'Inter', 'Arial', sans-serif";
 
 const skeuCard = {
   background: "linear-gradient(145deg, #ffffff 0%, #f7f2ea 100%)",
@@ -65,7 +65,7 @@ const mangoVarieties = [
   { name: "Langra", desc: "Green skinned even when ripe, with a uniquely complex sweet and tart flavor.", img: langraImg },
   { name: "Nawabpuri", desc: "A traditional cultivar prized for its aromatic richness and smooth velvety texture.", img: nawabpuriImg },
   { name: "Sindhri", desc: "The pride of Sindh, celebrated for its large size and exceptionally sweet taste.", img: sindhriImg },
-  { name: "Desi Mango", desc: "The authentic village mango with an intensely concentrated and nostalgic flavor.", img: desiImg },
+  { name: "Royal Blood Desi", desc: "The authentic village mango with an intensely concentrated and nostalgic flavor.", img: royalBloodDesiImg },
 ];
 
 const galleryItems = [
@@ -138,7 +138,7 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
 
 function SectionLabel({ children }: { children: string }) {
   return (
-    <div style={{
+    <div className="section-label" style={{
       display: "inline-block",
       fontSize: "11px",
       fontFamily: sans,
@@ -245,10 +245,6 @@ export default function App() {
             width: "158px", height: "42px", objectFit: "contain",
             filter: "drop-shadow(0 2px 5px rgba(255,220,27,0.35))",
           }} />
-          <div className="nav-brand-copy">
-            <div style={{ fontSize: "15px", fontWeight: 800, color: C.deepGreen, letterSpacing: "-0.2px", fontFamily: serif }}>The Chosens</div>
-            <div style={{ fontSize: "9px", fontFamily: sans, color: "#8a7a50", letterSpacing: "1.5px", fontWeight: 600, textTransform: "uppercase" }}>Premium Mangoes</div>
-          </div>
         </div>
 
         <div className="nav-links-desktop" style={{ display: "flex", alignItems: "center", gap: "2px" }}>
@@ -413,7 +409,7 @@ export default function App() {
           </div>
 
           {/* RIGHT */}
-          <div style={{ position: "relative" }} className="fade-up">
+          <div style={{ position: "relative" }} className="hero-visual fade-up">
             {/* softened vertical shadow */}
             <div style={{
               position: "absolute", top: 24, left: 0, right: 0, bottom: -8,
@@ -851,7 +847,7 @@ export default function App() {
               }} />
             </div>
             <h2 style={{ fontSize:"clamp(24px,4vw,46px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.8px", marginBottom:"16px", fontFamily:serif }}>
-              Order Your Premium Mangoes Today
+              Order Your Mangoes Today
             </h2>
             <p style={{ fontSize:"17px", color:"#6a5830", fontFamily:sans, maxWidth:"500px", margin:"0 auto 38px", lineHeight:"1.75" }}>
               Place your order instantly via WhatsApp. Our team responds within minutes and ensures delivery to your doorstep.
@@ -902,10 +898,6 @@ export default function App() {
                   width:"190px", height:"52px", objectFit:"contain",
                   filter:"drop-shadow(0 4px 10px rgba(255,220,27,0.32))",
                 }} />
-                <div className="footer-brand-copy">
-                  <div style={{ fontSize:"18px", fontWeight:800, color:C.deepGreen, fontFamily:serif }}>The Chosens</div>
-                  <div style={{ fontSize:"10px", fontFamily:sans, color:"#8a7a50", letterSpacing:"1.5px", fontWeight:600, textTransform:"uppercase" as const }}>Premium Mangoes</div>
-                </div>
               </div>
               <p style={{ fontSize:"14px", fontFamily:sans, color:"#6a5830", lineHeight:"1.80", marginBottom:"24px", maxWidth:"280px" }}>
                 Selectively Chosen. Devotedly Delivered.
@@ -929,7 +921,7 @@ export default function App() {
               <h4 style={{ fontSize:"13px", fontWeight:700, color:"#180d00", letterSpacing:"1.5px", textTransform:"uppercase" as const, marginBottom:"20px", fontFamily:sans }}>
                 Our Varieties
               </h4>
-              {["Mosmi Chaunsa","White Chaunsa","Anwar Ratol","Saroli","Dusehri","Langra","Nawabpuri","Sindhri","Desi Mango"].map(v=>(
+              {["Mosmi Chaunsa","White Chaunsa","Anwar Ratol","Saroli","Dusehri","Langra","Nawabpuri","Sindhri","Royal Blood Desi"].map(v=>(
                 <div key={v} style={{ marginBottom:"8px" }}>
                   <a href="#our-mangoes" style={{ fontSize:"13px", fontFamily:sans, color:"#6a5830", textDecoration:"none", transition:"color 0.2s" }}
                     onMouseEnter={(e)=>{ (e.currentTarget as HTMLElement).style.color=C.green; }}
