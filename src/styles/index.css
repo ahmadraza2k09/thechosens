@@ -47,6 +47,11 @@ body{-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;backgr
 @keyframes labelSheen{0%,68%{transform:translateX(-120%)}84%,100%{transform:translateX(120%)}}
 @keyframes buttonSheen{0%,70%{left:-45%}88%,100%{left:120%}}
 
+/* scroll-triggered reveal (toggled by IntersectionObserver in App.tsx) */
+.reveal{opacity:0}
+.reveal.is-visible{animation:revealUp .7s cubic-bezier(.2,.9,.2,1) var(--reveal-delay,0ms) both}
+@keyframes revealUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
 @media (prefers-reduced-motion:reduce){
 	*,*::before,*::after{animation-duration:1ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important;transition-duration:1ms !important}
 }
@@ -164,4 +169,58 @@ body{-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision;backgr
 	.farm-step-card{padding:22px 18px !important}
 	.quality-section{padding-top:56px !important;padding-bottom:56px !important}
 }
+
+/* ============================================================
+   INTERNATIONAL POLISH — editorial "orchard atelier" layer
+   ============================================================ */
+:root{
+	--paper:#FBF6EA;--paper-2:#F6EEDC;
+	--ink:#20170A;--ink-soft:#5A4A2C;
+	--green:#0C4A28;--green-deep:#08361D;
+	--gold:#E8A317;--gold-deep:#9A6B12;--gold-line:rgba(176,128,38,.30);
+}
+
+/* Display typeface: Fraunces with optical sizing for editorial contrast */
+h1,h2,h3{font-optical-sizing:auto;text-wrap:balance}
+
+/* Warm paper base + barely-there film grain for depth */
+html,body{background:var(--paper)}
+body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
+	background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:140px 140px}
+
+/* Section rhythm — give the page tonal contrast instead of one flat cream */
+#our-mangoes{background:linear-gradient(180deg,#F6EEDC 0%,#F1E6CB 100%) !important}
+#contact{background:linear-gradient(160deg,#0C4A28 0%,#08361D 100%) !important;position:relative;
+	box-shadow:inset 0 1px 0 rgba(232,163,23,.32),inset 0 -1px 0 rgba(232,163,23,.18)}
+#contact > div > div{box-shadow:0 44px 90px -34px rgba(0,0,0,.5),0 4px 12px rgba(0,0,0,.12) !important;
+	border:1px solid rgba(176,128,38,.26) !important;background:linear-gradient(155deg,#FFFEFB 0%,#FBF5E9 100%) !important}
+
+/* Green house bands: trust strip, quality process, footer — gold hairlines */
+.trust-strip,.quality-section{background:linear-gradient(160deg,#0C4A28 0%,#08361D 100%) !important;
+	box-shadow:inset 0 1px 0 rgba(232,163,23,.28),inset 0 -1px 0 rgba(232,163,23,.16) !important}
+.trust-strip{box-shadow:inset 0 1px 0 rgba(232,163,23,.30),inset 0 -1px 0 rgba(232,163,23,.16),0 22px 46px -28px rgba(8,54,29,.6) !important}
+.site-footer{background:linear-gradient(180deg,#F6EEDC 0%,#EFE3C8 100%) !important;border-top:1px solid rgba(176,128,38,.30) !important}
+
+/* Material: trade neumorphism for one refined, expensive shadow + gold hairline */
+.promise-card,.mango-card,.farm-step-card{
+	background:linear-gradient(155deg,#FFFEFB 0%,#FBF5E9 100%) !important;
+	border:1px solid rgba(176,128,38,.18) !important;
+	box-shadow:0 26px 52px -30px rgba(58,40,8,.32),0 2px 6px rgba(58,40,8,.05) !important}
+.mango-card{border-radius:24px !important}
+.promise-card:hover,.mango-card:hover,.farm-step-card:hover{
+	box-shadow:0 36px 64px -28px rgba(58,40,8,.40),0 4px 12px rgba(58,40,8,.08) !important}
+
+/* Quality cards sit on the green band — keep them translucent glass, not cream */
+.quality-step-card{background:rgba(255,255,255,.08) !important;border:1px solid rgba(232,163,23,.22) !important;
+	box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 18px 38px -22px rgba(0,0,0,.6) !important}
+.quality-step-card:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 24px 46px -22px rgba(0,0,0,.7) !important}
+
+/* Hero plate: gold hairline frame + deep grounded shadow */
+.hero-visual>div:last-child{border:1px solid rgba(176,128,38,.32) !important;
+	box-shadow:0 44px 88px -34px rgba(58,40,8,.46),0 6px 18px rgba(58,40,8,.10) !important}
+
+/* Gold-leaf eyebrow seal */
+.section-label{font-family:'Manrope','Inter',sans-serif !important}
+.section-label::before{content:"";width:5px;height:5px;border-radius:50%;flex:0 0 auto;
+	background:linear-gradient(145deg,#F6D27A,#C7860E);box-shadow:0 0 0 3px rgba(232,163,23,.16)}
 

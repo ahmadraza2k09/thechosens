@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import logoImg from "../../assets/the-chosens-logo.png";
-import trademarkCertificateImg from "../../assets/ipo-trademark-certificate.jfif";
 import gallery1 from "../imports/1c41cff6-c630-4d8a-ad34-739d0f9972a7-1.jfif";
 import gallery2 from "../imports/2f8eb30d-4eb2-46a8-863f-ff05160b890a-1.jfif";
 import gallery3 from "../imports/30d28b0f-4cd1-446e-b7b9-50b8bd0d14a8-1.jfif";
@@ -27,33 +26,33 @@ const WA_PRIMARY = "+92 337 6113633";
 const WA_SECONDARY = "+92 314 4225277";
 
 const C = {
-  yellow: "#ffdc1b",
-  golden: "#ffdc1b",
-  green: "#036231",
-  deepGreen: "#005B2B",
-  ivory: "#FFF8ED",
-  cream: "#FAF7F0",
-  beige: "#F4E8D0",
+  yellow: "#E8A317",
+  golden: "#E8A317",
+  green: "#0C4A28",
+  deepGreen: "#08361D",
+  ivory: "#FBF6EA",
+  cream: "#F6EEDC",
+  beige: "#F0E5CC",
 };
 
-const brandSerif = "'Cormorant Garamond', Georgia, serif";
+const brandSerif = "'Fraunces', 'Cormorant Garamond', Georgia, serif";
 const serif = brandSerif;
 const sans = "'Manrope', 'Inter', 'Arial', sans-serif";
 
 const skeuCard = {
-  background: "linear-gradient(145deg, #ffffff 0%, #f7f2ea 100%)",
-  boxShadow: "8px 8px 24px rgba(0,0,0,0.10), -4px -4px 16px rgba(255,255,255,0.95), inset 0 1px 0 rgba(255,255,255,0.85)",
-  border: "1px solid rgba(255,255,255,0.75)",
+  background: "linear-gradient(155deg, #FFFEFB 0%, #FBF5E9 100%)",
+  boxShadow: "0 22px 48px -20px rgba(58,40,8,0.28), 0 2px 6px rgba(58,40,8,0.06)",
+  border: "1px solid rgba(176,128,38,0.18)",
 };
 
 const skeuBtnGreen = {
-  background: "linear-gradient(160deg, #04913e 0%, #036231 50%, #005B2B 100%)",
-  boxShadow: "5px 5px 14px rgba(0,55,22,0.38), -2px -2px 8px rgba(255,255,255,0.30), inset 0 2px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(0,0,0,0.15)",
+  background: "linear-gradient(160deg, #14633A 0%, #0C4A28 55%, #08361D 100%)",
+  boxShadow: "0 14px 28px -10px rgba(8,54,29,0.55), inset 0 1px 0 rgba(255,255,255,0.16)",
 };
 
 const skeuBtnYellow = {
-  background: "linear-gradient(160deg, #fff0a3 0%, #ffdc1b 55%, #d8b400 100%)",
-  boxShadow: "5px 5px 14px rgba(180,125,0,0.35), -2px -2px 8px rgba(255,255,255,0.80), inset 0 2px 0 rgba(255,255,255,0.50), inset 0 -1px 0 rgba(0,0,0,0.08)",
+  background: "linear-gradient(160deg, #F6D27A 0%, #E8A317 60%, #C7860E 100%)",
+  boxShadow: "0 14px 26px -10px rgba(176,128,38,0.50), inset 0 1px 0 rgba(255,255,255,0.45)",
 };
 
 const mangoVarieties = [
@@ -139,19 +138,21 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
 function SectionLabel({ children }: { children: string }) {
   return (
     <div className="section-label" style={{
-      display: "inline-block",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "10px",
       fontSize: "11px",
       fontFamily: sans,
-      letterSpacing: "3px",
-      color: C.green,
+      letterSpacing: "3.4px",
+      color: "#9A6B12",
       textTransform: "uppercase" as const,
       fontWeight: 700,
-      marginBottom: "18px",
-      padding: "8px 22px",
+      marginBottom: "20px",
+      padding: "7px 18px",
       borderRadius: "30px",
-      background: "linear-gradient(145deg, #FFF8ED, #F4E8D0)",
-      boxShadow: "3px 3px 8px rgba(0,0,0,0.08), -2px -2px 6px rgba(255,255,255,0.95)",
-      border: "1px solid rgba(255,220,27,0.3)",
+      background: "linear-gradient(145deg, rgba(255,252,244,0.9), rgba(240,229,204,0.7))",
+      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.8), 0 6px 16px -8px rgba(176,128,38,0.45)",
+      border: "1px solid rgba(176,128,38,0.32)",
     }}>{children}</div>
   );
 }
@@ -200,6 +201,55 @@ export default function App() {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("resize", onResize);
     };
+  }, []);
+
+  // Scroll-triggered reveal: fade + rise sections and cards as they enter view.
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+
+    const selector = [
+      ".section-heading",
+      ".promise-card",
+      ".mango-card",
+      ".farm-step",
+      ".quality-step-card",
+      ".trust-item",
+      ".tm-content",
+    ].join(", ");
+
+    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
+    if (!els.length) return;
+
+    // Stagger siblings within the same parent for a cascading entrance.
+    const counters = new Map<Element | null, number>();
+    els.forEach((el) => {
+      const n = counters.get(el.parentElement) ?? 0;
+      counters.set(el.parentElement, n + 1);
+      el.style.setProperty("--reveal-delay", `${(n % 8) * 70}ms`);
+      el.classList.add("reveal");
+    });
+
+    const onEnd = (e: Event) => {
+      const el = e.currentTarget as HTMLElement;
+      // Drop the classes once revealed so inline hover transforms keep working.
+      el.classList.remove("reveal", "is-visible");
+      el.style.removeProperty("--reveal-delay");
+      el.removeEventListener("animationend", onEnd);
+    };
+
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        el.addEventListener("animationend", onEnd);
+        el.classList.add("is-visible");
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -6% 0px" });
+
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
   }, []);
 
   const lift = (e: React.MouseEvent<HTMLElement>) => {
@@ -725,11 +775,11 @@ export default function App() {
         padding:"100px 24px",
         background:"linear-gradient(180deg, #FFF8ED 0%, #FAF7F0 100%)",
       }}>
-        <div style={{ maxWidth:"1120px", margin:"0 auto", display:"grid", gridTemplateColumns:"minmax(0, 0.95fr) minmax(320px, 1.05fr)", gap:"42px", alignItems:"center" }}>
-          <div>
+        <div style={{ maxWidth:"1120px", margin:"0 auto" }}>
+          <div className="tm-content" style={{ maxWidth:"780px", margin:"0 auto", textAlign:"center" as const }}>
             <SectionLabel>Trade Marks Registry</SectionLabel>
-            <div style={{ display:"flex", alignItems:"center", gap:"18px", marginBottom:"24px", flexWrap:"wrap" as const }}>
-              <img src={logoImg} alt="The Chosens logo" style={{ width:"min(100%, 310px)", height:"auto", objectFit:"contain", filter:"drop-shadow(0 8px 14px rgba(0,55,22,0.16))" }} />
+            <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"18px", margin:"6px 0 24px", flexWrap:"wrap" as const }}>
+              <img src={logoImg} alt="The Chosens logo" style={{ width:"min(100%, 300px)", height:"auto", objectFit:"contain", filter:"drop-shadow(0 8px 14px rgba(0,55,22,0.16))" }} />
               <div aria-label="Trademark application badge" style={{
                 width:"68px", height:"68px", borderRadius:"50%",
                 display:"flex", alignItems:"center", justifyContent:"center",
@@ -739,13 +789,13 @@ export default function App() {
                 border:"1px solid rgba(255,255,255,0.7)",
               }}>TM</div>
             </div>
-            <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.4px", marginBottom:"18px", fontFamily:serif, lineHeight:1.12 }}>
+            <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.4px", marginBottom:"20px", fontFamily:serif, lineHeight:1.12 }}>
               Officially Filed With Pakistan's IPO Trade Marks Registry
             </h2>
-            <p style={{ fontSize:"16.5px", color:"#5a4822", fontFamily:sans, lineHeight:"1.78", marginBottom:"24px", maxWidth:"560px" }}>
-              The Chosens logo has been filed with the Government of Pakistan Intellectual Property Organisation, Trade Marks Registry. Application number <strong style={{ color:C.deepGreen }}>874257</strong> is shown in the official acknowledgement receipt displayed here as proof.
+            <p style={{ fontSize:"16.5px", color:"#5a4822", fontFamily:sans, lineHeight:"1.85", margin:"0 auto 30px", maxWidth:"680px" }}>
+              The Chosens logo is officially filed with the Government of Pakistan Intellectual Property Organisation under its Trade Marks Registry. Registered under application number <strong style={{ color:C.deepGreen }}>874257</strong> and filed on <strong style={{ color:C.deepGreen }}>06/04/2026</strong>, this filing safeguards our brand identity and stands as a lasting reflection of our commitment to authenticity, premium quality, and the trust we earn with every customer who chooses our mangoes.
             </p>
-            <div className="trademark-facts" style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0, 1fr))", gap:"12px", maxWidth:"560px" }}>
+            <div className="trademark-facts" style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0, 1fr))", gap:"12px", maxWidth:"560px", margin:"0 auto" }}>
               {[
                 ["Authority", "Government of Pakistan IPO"],
                 ["Registry", "Trade Marks Registry"],
@@ -763,19 +813,6 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </div>
-          <div style={{
-            ...skeuCard,
-            borderRadius:"24px",
-            padding:"16px",
-            boxShadow:"12px 16px 44px rgba(0,0,0,0.14), -6px -6px 24px rgba(255,255,255,0.92)",
-          }}>
-            <img src={trademarkCertificateImg} alt="IPO Trade Marks Registry acknowledgement receipt for The Chosens application number 874257" style={{
-              display:"block", width:"100%", height:"auto", borderRadius:"16px", border:"1px solid rgba(0,0,0,0.08)",
-            }} />
-            <p style={{ margin:"14px 4px 2px", fontSize:"12px", lineHeight:"1.55", fontFamily:sans, color:"#7a6a42" }}>
-              Proof document: acknowledgement receipt of application from the Government of Pakistan IPO Trade Marks Registry.
-            </p>
           </div>
         </div>
       </section>
