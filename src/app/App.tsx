@@ -10,7 +10,7 @@ import gallery6 from "../imports/bd306616-3866-486f-8cdd-5c0cf846b321-1.jfif";
 import gallery7 from "../imports/fd84e2fe-e899-40cf-ac59-07d5a446fc5a-1.jfif";
 
 // Local asset replacements requested by the user
-import newlyProvided from "../../assets/newly-provided-mango.jpg";
+import heroMango from "../../assets/hero-mangoes.jpg";
 import mosmiImg from "../../assets/mosmi-chaunsa.jpeg";
 import whiteChaunsaImg from "../../assets/white-chaunsa.jpg";
 import anwarRatolImg from "../../assets/anwar-ratol.jpeg";
@@ -56,7 +56,7 @@ const skeuBtnYellow = {
 };
 
 const mangoVarieties = [
-  { name: "Mosmi Chaunsa", desc: "The king of Pakistani mangoes with unmatched sweetness and a rich golden hue.", img: mosmiImg },
+  { name: "Summer Bahisht Mosmi Chaunsa", desc: "The king of Pakistani mangoes with unmatched sweetness and a rich golden hue.", img: mosmiImg },
   { name: "White Chaunsa", desc: "Exceptionally sweet with a pale golden skin and fiber free pulp.", img: whiteChaunsaImg },
   { name: "Anwar Ratol", desc: "Small yet intensely aromatic with an extraordinary natural sugar content.", img: anwarRatolImg },
   { name: "Saroli", desc: "A rare early season variety known for its perfectly balanced sweet and tangy profile.", img: saroliImg },
@@ -109,7 +109,7 @@ const qualitySteps = [
 ];
 
 const trustItems = [
-  { val: "IPO Filed", lbl: "Trade Marks Registry" },
+  { val: "Govt. Registered", lbl: "Government of Pakistan" },
   { val: "Farm Fresh", lbl: "Direct from Orchards" },
   { val: "100% Natural", lbl: "Chemical Free" },
   { val: "Premium", lbl: "Quality" },
@@ -134,6 +134,29 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
+
+function InstagramIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2.16c3.2 0 3.58.013 4.85.07 1.17.054 1.8.249 2.23.413.56.218.96.478 1.38.898.42.42.68.82.9 1.38.164.43.36 1.06.413 2.23.057 1.27.07 1.65.07 4.85s-.013 3.58-.07 4.85c-.054 1.17-.249 1.8-.413 2.23-.218.56-.478.96-.898 1.38-.42.42-.82.68-1.38.9-.43.164-1.06.36-2.23.413-1.27.057-1.65.07-4.85.07s-3.58-.013-4.85-.07c-1.17-.054-1.8-.249-2.23-.413-.56-.218-.96-.478-1.38-.898-.42-.42-.68-.82-.9-1.38-.164-.43-.36-1.06-.413-2.23C2.173 15.58 2.16 15.2 2.16 12s.013-3.58.07-4.85c.054-1.17.249-1.8.413-2.23.218-.56.478-.96.898-1.38.42-.42.82-.68 1.38-.9.43-.164 1.06-.36 2.23-.413C8.42 2.173 8.8 2.16 12 2.16M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.79.306-1.46.717-2.126 1.384C1.347 2.68.936 3.35.63 4.14.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.789.717 1.459 1.384 2.126.666.666 1.336 1.078 2.126 1.384.765.297 1.636.499 2.913.558C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.261 2.913-.558.789-.306 1.459-.718 2.126-1.384.666-.667 1.078-1.337 1.384-2.126.297-.765.499-1.636.558-2.913C23.986 15.667 24 15.26 24 12s-.014-3.667-.072-4.947c-.06-1.277-.261-2.148-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.649.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0z"/>
+      <path d="M12 5.838A6.162 6.162 0 1 0 18.162 12 6.162 6.162 0 0 0 12 5.838zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/>
+      <circle cx="18.406" cy="5.594" r="1.44"/>
+    </svg>
+  );
+}
+
+function FacebookIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.026 4.388 11.02 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.013 1.792-4.678 4.533-4.678 1.313 0 2.686.235 2.686.235v2.965h-1.513c-1.49 0-1.955.93-1.955 1.886v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+    </svg>
+  );
+}
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/thechosensofficial3/", icon: <InstagramIcon /> },
+  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61590422983570&ref", icon: <FacebookIcon /> },
+];
 
 function SectionLabel({ children }: { children: string }) {
   return (
@@ -170,12 +193,12 @@ export default function App() {
       link.rel = "icon";
       document.head.appendChild(link);
     }
-    link.href = logoImg;
+    link.href = "/the-chosens-favicon.png";
     link.type = "image/png";
 
     const shortcut = document.createElement("link");
     shortcut.rel = "shortcut icon";
-    shortcut.href = logoImg;
+    shortcut.href = "/the-chosens-favicon.png";
     document.head.appendChild(shortcut);
 
     document.title = "The Chosens | Pakistan's Finest Mangoes";
@@ -414,7 +437,7 @@ export default function App() {
               fontSize:"17px", lineHeight:"1.80", color:"#5a4822",
               marginBottom:"42px", fontFamily:sans, maxWidth:"460px",
             }}>
-              Every mango is individually hand selected to ensure premium quality, iconic aroma, and unforgettable flavor from a brand officially filed with the Government of Pakistan IPO Trade Marks Registry.
+              Every mango is individually hand selected to ensure premium quality, iconic aroma, and unforgettable flavor from a brand officially registered with the Government of Pakistan.
             </p>
 
             <div style={{ display:"flex", gap:"14px", flexWrap:"wrap" as const }}>
@@ -473,8 +496,8 @@ export default function App() {
               border: "2px solid rgba(255,255,255,0.80)",
             }}>
               <img
-                src={newlyProvided}
-                alt="Pakistan's finest premium mangoes"
+                src={heroMango}
+                alt="Pakistan's finest premium mangoes, fresh from the orchard on mango leaves"
                 style={{ width: "100%", height: "min(52vh, 520px)", objectFit: "cover", display: "block" }}
               />
               {/* floating quality badge */}
@@ -777,10 +800,10 @@ export default function App() {
       }}>
         <div style={{ maxWidth:"1120px", margin:"0 auto" }}>
           <div className="tm-content" style={{ maxWidth:"780px", margin:"0 auto", textAlign:"center" as const }}>
-            <SectionLabel>Trade Marks Registry</SectionLabel>
+            <SectionLabel>Government Registered</SectionLabel>
             <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"18px", margin:"6px 0 24px", flexWrap:"wrap" as const }}>
               <img src={logoImg} alt="The Chosens logo" style={{ width:"min(100%, 300px)", height:"auto", objectFit:"contain", filter:"drop-shadow(0 8px 14px rgba(0,55,22,0.16))" }} />
-              <div aria-label="Trademark application badge" style={{
+              <div aria-label="Trademark registration badge" style={{
                 width:"68px", height:"68px", borderRadius:"50%",
                 display:"flex", alignItems:"center", justifyContent:"center",
                 background:"linear-gradient(145deg,#fff0a3,#ffdc1b)",
@@ -790,17 +813,16 @@ export default function App() {
               }}>TM</div>
             </div>
             <h2 style={{ fontSize:"clamp(28px,4vw,50px)", fontWeight:900, color:"#180d00", letterSpacing:"-0.4px", marginBottom:"20px", fontFamily:serif, lineHeight:1.12 }}>
-              Officially Filed With Pakistan's IPO Trade Marks Registry
+              Officially Registered With The Government Of Pakistan
             </h2>
             <p style={{ fontSize:"16.5px", color:"#5a4822", fontFamily:sans, lineHeight:"1.85", margin:"0 auto 30px", maxWidth:"680px" }}>
-              The Chosens logo is officially filed with the Government of Pakistan Intellectual Property Organisation under its Trade Marks Registry. Registered under application number <strong style={{ color:C.deepGreen }}>874257</strong> and filed on <strong style={{ color:C.deepGreen }}>06/04/2026</strong>, this filing safeguards our brand identity and stands as a lasting reflection of our commitment to authenticity, premium quality, and the trust we earn with every customer who chooses our mangoes.
+              The Chosens is an officially registered brand with the Government of Pakistan. This registration safeguards our brand identity and stands as a lasting reflection of our commitment to authenticity, premium quality, and the trust we earn with every customer who chooses our mangoes.
             </p>
-            <div className="trademark-facts" style={{ display:"grid", gridTemplateColumns:"repeat(2, minmax(0, 1fr))", gap:"12px", maxWidth:"560px", margin:"0 auto" }}>
+            <div className="trademark-facts" style={{ display:"grid", gridTemplateColumns:"repeat(3, minmax(0, 1fr))", gap:"12px", maxWidth:"600px", margin:"0 auto" }}>
               {[
-                ["Authority", "Government of Pakistan IPO"],
-                ["Registry", "Trade Marks Registry"],
-                ["Application", "874257"],
-                ["Filing Date", "06/04/2026"],
+                ["Authority", "Government of Pakistan"],
+                ["Status", "Registered"],
+                ["Origin", "Pakistan"],
               ].map(([label,value])=>(
                 <div key={label} style={{
                   padding:"14px 16px", borderRadius:"16px",
@@ -894,6 +916,7 @@ export default function App() {
               padding:"16px 36px", borderRadius:"50px",
               color:"#fff", fontSize:"16px", fontFamily:sans, fontWeight:700,
               textDecoration:"none", letterSpacing:"0.3px",
+              whiteSpace:"nowrap" as const, maxWidth:"100%",
               ...skeuBtnGreen,
               transition:"transform 0.15s ease",
               marginBottom:"28px",
@@ -902,7 +925,7 @@ export default function App() {
             onMouseLeave={(e)=>{ (e.currentTarget as HTMLElement).style.transform="translateY(0)"; }}
             >
               <WhatsAppIcon size={20} />
-              Order on WhatsApp: {WA_PRIMARY}
+              Order on WhatsApp
             </a>
             <div style={{ display:"flex", justifyContent:"center", gap:"40px", flexWrap:"wrap" as const }}>
               <div>
@@ -939,7 +962,7 @@ export default function App() {
               <p style={{ fontSize:"14px", fontFamily:sans, color:"#6a5830", lineHeight:"1.80", marginBottom:"24px", maxWidth:"280px" }}>
                 Selectively Chosen. Devotedly Delivered.
                 <br /><br />
-                Pakistan's finest mangoes delivered fresh to your doorstep with unwavering commitment to quality, authenticity, and an IPO Trade Marks Registry filed brand identity.
+                Pakistan's finest mangoes delivered fresh to your doorstep with unwavering commitment to quality, authenticity, and a brand registered with the Government of Pakistan.
               </p>
               <a href={WA_URL} target="_blank" rel="noopener noreferrer" style={{
                 display:"inline-flex", alignItems:"center", gap:"8px",
@@ -958,7 +981,7 @@ export default function App() {
               <h4 style={{ fontSize:"13px", fontWeight:700, color:"#180d00", letterSpacing:"1.5px", textTransform:"uppercase" as const, marginBottom:"20px", fontFamily:sans }}>
                 Our Varieties
               </h4>
-              {["Mosmi Chaunsa","White Chaunsa","Anwar Ratol","Saroli","Dusehri","Langra","Nawabpuri","Sindhri","Royal Blood Desi"].map(v=>(
+              {["Summer Bahisht Mosmi Chaunsa","White Chaunsa","Anwar Ratol","Saroli","Dusehri","Langra","Nawabpuri","Sindhri","Royal Blood Desi"].map(v=>(
                 <div key={v} style={{ marginBottom:"8px" }}>
                   <a href="#our-mangoes" style={{ fontSize:"13px", fontFamily:sans, color:"#6a5830", textDecoration:"none", transition:"color 0.2s" }}
                     onMouseEnter={(e)=>{ (e.currentTarget as HTMLElement).style.color=C.green; }}
@@ -999,8 +1022,30 @@ export default function App() {
                 </div>
                 <div>
                   <div style={{ fontSize:"10px", fontFamily:sans, color:"#9a8a60", fontWeight:700, letterSpacing:"1px", textTransform:"uppercase" as const, marginBottom:"10px" }}>Follow Us</div>
-                  {/* Follow icons removed per request */}
-                  <div />
+                  <div style={{ display:"flex", gap:"10px" }}>
+                    {socialLinks.map((s)=>(
+                      <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} style={{
+                        width:"38px", height:"38px", borderRadius:"50%",
+                        display:"flex", alignItems:"center", justifyContent:"center",
+                        background:"linear-gradient(145deg, rgba(255,252,244,0.92), rgba(240,229,204,0.72))",
+                        border:"1px solid rgba(176,128,38,0.32)",
+                        boxShadow:"inset 0 1px 0 rgba(255,255,255,0.85), 0 6px 16px -8px rgba(176,128,38,0.45)",
+                        color:C.green, textDecoration:"none",
+                        transition:"transform 0.18s ease, box-shadow 0.18s ease, color 0.18s ease",
+                      }}
+                      onMouseEnter={(e)=>{
+                        (e.currentTarget as HTMLElement).style.transform="translateY(-2px)";
+                        (e.currentTarget as HTMLElement).style.color=C.deepGreen;
+                        (e.currentTarget as HTMLElement).style.boxShadow="inset 0 1px 0 rgba(255,255,255,0.9), 0 10px 22px -8px rgba(176,128,38,0.55)";
+                      }}
+                      onMouseLeave={(e)=>{
+                        (e.currentTarget as HTMLElement).style.transform="translateY(0)";
+                        (e.currentTarget as HTMLElement).style.color=C.green;
+                        (e.currentTarget as HTMLElement).style.boxShadow="inset 0 1px 0 rgba(255,255,255,0.85), 0 6px 16px -8px rgba(176,128,38,0.45)";
+                      }}
+                      >{s.icon}</a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
